@@ -7,20 +7,23 @@ import (
 	"blogs-api/internal/users/store"
 	"blogs-api/internal/utils"
 	"blogs-api/pkg"
+	_ "github.com/golang-migrate/migrate/source/file"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 	"net/http"
 )
 
-type Server struct {
-	api    *api.API
-	router *mux.Router
+func main() {
+	start()
 }
 
-func main() {
+func start() {
+	// init logger
 	pkg.InitLogger()
 	pkg.Logger.Info("Starting server")
 
+	// load environments
 	if err := godotenv.Load(); err != nil {
 		panic(err)
 	}
@@ -33,12 +36,6 @@ func main() {
 	userStore := store.New(db.DB)
 	userService := service.New(userStore)
 	srv := api.New(*userService, db.DB)
-
-	// start server
-	start(srv, port)
-}
-
-func start(srv *api.API, port string) {
 	r := mux.NewRouter()
 	srv.AddRoutes(r)
 

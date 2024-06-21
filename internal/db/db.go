@@ -44,16 +44,13 @@ func migrateSql(db *sql.DB) error {
 	dbName := os.Getenv("DB_NAME")
 	driver, err := postgres.WithInstance(db, &postgres.Config{})
 	if err != nil {
-		panic(err)
-	}
-
-	migrator, err := migrate.NewWithDatabaseInstance(migrationsPath, dbName, driver)
-
-	if err != nil {
 		return err
 	}
 
-	defer migrator.Close()
+	migrator, err := migrate.NewWithDatabaseInstance(migrationsPath, dbName, driver)
+	if err != nil {
+		return err
+	}
 
 	if err = migrator.Up(); err != nil && err != migrate.ErrNoChange {
 		return err

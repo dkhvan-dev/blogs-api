@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a642c21-7c98-4acd-93aa-7f587d5d2781" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/blogs-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/api/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/api/errors.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/api/users.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/blogs/blogs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/migrations/1_create_init_tables.up.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/users/handlers/handler.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/users/model/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/users/service/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/users/store/store.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/utils/util.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/logger.go" afterDir="false" />
+    <list default="true" id="5a642c21-7c98-4acd-93aa-7f587d5d2781" name="Changes" comment="golang">
+      <change afterPath="$PROJECT_DIR$/internal/core/errors/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/api/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/api/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/api/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/api/users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/users/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/users/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/users/service/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/users/service/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/users/store/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/users/store/store.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/logger.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +46,15 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "/Users/dkhvan",
     "nodejs_package_manager_path": "npm"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -70,6 +71,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="feat: Prepare structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Prepare structure" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

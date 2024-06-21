@@ -1,18 +1,14 @@
 package model
 
-import (
-	"time"
-)
-
 type User struct {
-	Login      string    `json:"login"`
-	Password   string    `json:"password"`
-	Email      string    `json:"email"`
-	FirstName  string    `json:"firstName"`
-	MiddleName string    `json:"middleName"`
-	LastName   string    `json:"lastName"`
-	Birthdate  time.Time `json:"birthdate"`
-	Role       Role      `json:"role"`
+	Login      string  `json:"login"`
+	Password   string  `json:"password"`
+	Email      string  `json:"email"`
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName"`
+	LastName   string  `json:"lastName"`
+	Birthdate  string  `json:"birthdate"`
+	Role       Role    `json:"role"`
 }
 
 type Role struct {
@@ -23,22 +19,21 @@ type Role struct {
 // DTOs
 
 type UserCreate struct {
-	Login      string    `json:"login"`
-	Password   string    `json:"password"`
-	RePassword string    `json:"rePassword"`
-	Email      string    `json:"email"`
-	FirstName  string    `json:"firstName"`
-	MiddleName string    `json:"middleName"`
-	LastName   string    `json:"lastName"`
-	Birthdate  time.Time `json:"birthdate"`
+	Login      string  `json:"login"`
+	Password   string  `json:"password"`
+	RePassword string  `json:"rePassword"`
+	Email      string  `json:"email"`
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName"`
+	LastName   string  `json:"lastName"`
+	Birthdate  string  `json:"birthdate"`
 }
 
 type UserUpdate struct {
-	Login      string    `json:"login"`
-	FirstName  string    `json:"firstName"`
-	MiddleName string    `json:"middleName"`
-	LastName   string    `json:"lastName"`
-	Birthdate  time.Time `json:"birthdate"`
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName"`
+	LastName   string  `json:"lastName"`
+	Birthdate  string  `json:"birthdate"`
 }
 
 type UserChangePassword struct {
@@ -48,13 +43,18 @@ type UserChangePassword struct {
 }
 
 type UserView struct {
-	Login      string    `json:"login"`
-	Email      string    `json:"email"`
-	FirstName  string    `json:"firstName"`
-	MiddleName string    `json:"middleName"`
-	LastName   string    `json:"lastName"`
-	Birthdate  time.Time `json:"birthdate"`
-	Role       Role      `json:"role"`
+	Login      string  `json:"login"`
+	Email      string  `json:"email"`
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName"`
+	LastName   string  `json:"lastName"`
+	Birthdate  string  `json:"birthdate"`
+	Role       Role    `json:"role"`
+}
+
+type UserLoginRequest struct {
+	Login    string `json:"login"`
+	Password string `json:"password"`
 }
 
 // mapper

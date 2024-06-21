@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/go-yaml/yaml v2.1.0+incompatible // indirect
+	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang-migrate/migrate v3.5.4+incompatible // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
