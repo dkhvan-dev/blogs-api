@@ -30,6 +30,7 @@ type UserCreate struct {
 }
 
 type UserUpdate struct {
+	Login      string  `json:"login"`
 	FirstName  string  `json:"firstName"`
 	MiddleName *string `json:"middleName"`
 	LastName   string  `json:"lastName"`
@@ -37,6 +38,7 @@ type UserUpdate struct {
 }
 
 type UserChangePassword struct {
+	Login       string `json:"login"`
 	OldPassword string `json:"oldPassword"`
 	NewPassword string `json:"newPassword"`
 	RePassword  string `json:"rePassword"`

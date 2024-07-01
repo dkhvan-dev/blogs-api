@@ -1,25 +1,32 @@
 package api
 
 import (
+	"blogs-api/internal/core/errors"
 	"encoding/json"
 	"net/http"
 )
 
-func handleError(w http.ResponseWriter, err error) {
+func handleError(w http.ResponseWriter, err errors.Error) {
 	errJSON := struct {
 		Error string `json:"error"`
 	}{
 		Error: err.Error(),
 	}
 
-	data, err := json.Marshal(errJSON)
-	if err != nil {
-		data = []byte(`{"error": "internal server error"}`)
-	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(err.Code)
 
-	_, err = w.Write(data)
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
+	data, marshalErr := json.Marshal(errJSON)
+	if marshalErr != nil {
+		http.Error(w, `{"error": "internal server error"}`, http.StatusInternalServerError)
 		return
 	}
+
+	_, writeErr := w.Write(data)
+	if writeErr != nil {
+		http.Error(w, `{"error": "internal server error"}`, http.StatusInternalServerError)
+		return
+	}
+
+	return
 }
